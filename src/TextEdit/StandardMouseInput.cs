@@ -7,7 +7,7 @@ public class StandardMouseInput : ITextEditorMouseInput
 {
     readonly TextEditor _editor;
 
-    public StandardMouseInput(TextEditor editor) 
+    public StandardMouseInput(TextEditor editor)
         => _editor = editor ?? throw new ArgumentNullException(nameof(editor));
 
     public void HandleMouseInputs()
@@ -25,8 +25,9 @@ public class StandardMouseInput : ITextEditorMouseInput
         if (shift || alt)
             return;
 
-        var click = ImGui.IsMouseClicked(0);
-        var doubleClick = ImGui.IsMouseDoubleClicked(0);
+        var click = ImGui.IsMouseClicked(ImGuiMouseButton.Left);
+        // Im
+        var doubleClick = ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left);
 
         /* Left mouse button double click */
         if (doubleClick)
@@ -44,7 +45,7 @@ public class StandardMouseInput : ITextEditorMouseInput
             _editor.Selection.Mode = ctrl ? SelectionMode.Word : SelectionMode.Normal;
             _editor.Selection.Select(_editor.Selection.InteractiveStart, _editor.Selection.InteractiveEnd, _editor.Selection.Mode);
         }
-        else if (ImGui.IsMouseDragging(0) && ImGui.IsMouseDown(0)) // Mouse left button dragging (=> update selection)
+        else if (ImGui.IsMouseDragging(ImGuiMouseButton.Left) && ImGui.IsMouseDown(ImGuiMouseButton.Left)) // Mouse left button dragging (=> update selection)
         {
             io.WantCaptureMouse = true;
             _editor.Selection.Cursor = _editor.Selection.InteractiveEnd = _editor.Renderer.ScreenPosToCoordinates(ImGui.GetMousePos());

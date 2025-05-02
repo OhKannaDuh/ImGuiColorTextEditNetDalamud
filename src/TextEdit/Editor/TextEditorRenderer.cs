@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Text;
 using ImGuiNET;
+using System.Linq;
 
 namespace ImGuiColorTextEditNet.Editor;
 
@@ -87,13 +88,13 @@ public class TextEditorRenderer
     }
 
     uint ColorUInt(PaletteIndex index) =>
-        _uintPalette == null || (int)index >= _uintPalette.Length 
+        _uintPalette == null || (int)index >= _uintPalette.Length
             ? MagentaUInt
             : _uintPalette[(int)index];
 
     Vector4 ColorVec(PaletteIndex index) =>
-        _vec4Palette == null || (int)index > _vec4Palette.Length 
-            ? MagentaVec4 
+        _vec4Palette == null || (int)index > _vec4Palette.Length
+            ? MagentaVec4
             : _vec4Palette[(int)index];
 
 
@@ -108,8 +109,8 @@ public class TextEditorRenderer
 
         if (!IsImGuiChildIgnored)
         {
-            ImGui.BeginChild(title, size, 
-                ImGuiChildFlags.None,
+            ImGui.BeginChild(title, size,
+                false,
                 ImGuiWindowFlags.HorizontalScrollbar
                 | ImGuiWindowFlags.AlwaysHorizontalScrollbar
                 | ImGuiWindowFlags.NoMove);
@@ -433,14 +434,15 @@ public class TextEditorRenderer
                 i += chunk.Length;
             }
 
-            drawList.AddText(offset, color, temp);
-            return ImGui.CalcTextSize(temp);
+            drawList.AddText(offset, color, temp.ToString());
+            return ImGui.CalcTextSize(temp.ToString());
         }
         finally
         {
             if (tempArray != null)
                 ArrayPool<char>.Shared.Return(tempArray);
         }
+
     }
 
     float TextDistanceToLineStart(Coordinates position)

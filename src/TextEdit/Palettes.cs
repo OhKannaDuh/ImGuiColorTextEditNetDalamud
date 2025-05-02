@@ -25,6 +25,33 @@ public static class Palettes
         0x40808080, // Current line fill (inactive)
         0x40a0a0a0, // Current line edge
         0xa0a0a0a0, // Executing Line
+        0xffd69c56, // Function
+    };
+
+    public static readonly uint[] DarkMaterial = {
+        0xffc5c8c6, // Default (soft grey)
+        0xffc792ea, // Keyword (soft purple)
+        0xfff78c6c, // Number (peachy orange)
+        0xffc3e88d, // String (green)
+        0xfffcbf7e, // Char literal (light orange)
+        0xff89ddff, // Punctuation (cyan)
+        0xff82aaff, // Preprocessor (blue)
+        0xffd0d0d0, // Identifier (light gray)
+        0xffaddb67, // Known identifier (lime green)
+        0xffffcb6b, // Preproc identifier (yellow)
+        0xff616161, // Comment (single line, dim gray)
+        0xff616161, // Comment (multi line)
+        0xff212121, // Background (dark gray)
+        0xffffffff, // Cursor (white)
+        0x8039adb5, // Selection (semi-transparent teal)
+        0x80ff5370, // ErrorMarker (semi-transparent red)
+        0x40ffcb6b, // Breakpoint (soft yellow)
+        0xff4a4a4a, // Line number (dim gray)
+        0x40282828, // Current line fill (dark, semi-transparent)
+        0x403c3f41, // Current line fill (inactive)
+        0x403c3f41, // Current line edge
+        0xa03dd3b0, // Executing Line (teal)
+        0xffc792ea, // Function (soft purple)
     };
 
     public static readonly uint[] Light = {
@@ -50,6 +77,7 @@ public static class Palettes
         0x40808080, // Current line fill (inactive)
         0x40000000, // Current line edge
         0xa0a0a0a0, // Executing Line
+        0xffff0c06, // Function
     };
 
     public static readonly uint[] RetroBlue = {
@@ -75,5 +103,6 @@ public static class Palettes
         0x40808080, // Current line fill (inactive)
         0x40000000, // Current line edge
         0xa0a0a0a0, // Executing Line
+        0xffffff00, // Function
     };
 }

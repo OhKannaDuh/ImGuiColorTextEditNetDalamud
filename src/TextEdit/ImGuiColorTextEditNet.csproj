@@ -1,26 +1,47 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <Authors>Cam Sinclair, BalazsJako</Authors>
-    <Company />
-    <Description>A multi-line ImGui text editor control supporting syntax highlighting</Description>
-    <Copyright>2023 Cam Sinclair</Copyright>
-    <PackageId>ImGuiColorTextEditNet</PackageId>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/csinkers/ImGuiColorTextEditNet</PackageProjectUrl>
-    <PackageTags>imgui</PackageTags>
-    <RepositoryUrl>https://github.com/csinkers/ImGuiColorTextEditNet</RepositoryUrl>
-    <RepositoryType>Git</RepositoryType>
-    <Version>0.1.8</Version>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="ImGui.NET" Version="1.91.0.1" />
-  </ItemGroup>
+    <PropertyGroup>
+        <TargetFramework>net9.0-windows7.0</TargetFramework>
+        <Platforms>x64</Platforms>
+        <Nullable>enable</Nullable>
+        <Authors>Cam Sinclair, BalazsJako</Authors>
+        <Company />
+        <Description>A multi-line ImGui text editor control supporting syntax highlighting</Description>
+        <Copyright>2023 Cam Sinclair</Copyright>
+        <PackageId>ImGuiColorTextEditNet</PackageId>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/csinkers/ImGuiColorTextEditNet</PackageProjectUrl>
+        <PackageTags>imgui</PackageTags>
+        <RepositoryUrl>https://github.com/csinkers/ImGuiColorTextEditNet</RepositoryUrl>
+        <RepositoryType>Git</RepositoryType>
+        <Version>0.1.8</Version>
+        <LangVersion>preview</LangVersion>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <OutputPath>bin\$(Configuration)\</OutputPath>
+        <NoWarn>CS1591; CA1401; CS0649; CS8632; CS0414; CS0169; IDE1006; CS0419; CS8601; CS8604; CS8600; CS8602; CS8629; CS8625; CS8603; CS8620; CS8714; </NoWarn>
+        <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+        <Optimize>True</Optimize>
+        <IsTrimmable>false</IsTrimmable>
+        <Nullable>enable</Nullable>
+        <WarningsAsErrors>RS0030</WarningsAsErrors>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
-      <_Parameter1>TextEdit.Tests</_Parameter1>
-  </AssemblyAttribute>
-</ItemGroup>
+    <PropertyGroup>
+        <DalamudLibPath>$(appdata)\xivlauncher\Addon\Hooks\dev\</DalamudLibPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="ImGui.NET">
+            <HintPath>$(DalamudLibPath)ImGui.NET.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+            <_Parameter1>TextEdit.Tests</_Parameter1>
+        </AssemblyAttribute>
+    </ItemGroup>
 </Project>
