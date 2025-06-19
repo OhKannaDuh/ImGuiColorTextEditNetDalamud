@@ -3,17 +3,15 @@
         <TargetFramework>net9.0-windows7.0</TargetFramework>
         <Platforms>x64</Platforms>
         <Nullable>enable</Nullable>
-        <Authors>Cam Sinclair, BalazsJako</Authors>
-        <Company />
-        <Description>A multi-line ImGui text editor control supporting syntax highlighting</Description>
-        <Copyright>2023 Cam Sinclair</Copyright>
-        <PackageId>ImGuiColorTextEditNet</PackageId>
+        <Authors>Cam Sinclair, BalazsJako, OhKannaDuh</Authors>
+        <Description>A multi-line ImGui text editor control supporting syntax highlighting, modified to work with XIV Dalamud</Description>
+        <PackageId>ImGuiColorTextEditNetDalamud</PackageId>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <PackageProjectUrl>https://github.com/csinkers/ImGuiColorTextEditNet</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/OhKannaDuh/ImGuiColorTextEditNetDalamud</PackageProjectUrl>
         <PackageTags>imgui</PackageTags>
-        <RepositoryUrl>https://github.com/csinkers/ImGuiColorTextEditNet</RepositoryUrl>
+        <RepositoryUrl>https://github.com/OhKannaDuh/ImGuiColorTextEditNetDalamud</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
-        <Version>0.1.8</Version>
+        <Version>0.2.0</Version>
         <LangVersion>preview</LangVersion>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
@@ -37,11 +35,5 @@
             <HintPath>$(DalamudLibPath)ImGui.NET.dll</HintPath>
             <Private>False</Private>
         </Reference>
-    </ItemGroup>
-
-    <ItemGroup>
-        <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
-            <_Parameter1>TextEdit.Tests</_Parameter1>
-        </AssemblyAttribute>
     </ItemGroup>
 </Project>
